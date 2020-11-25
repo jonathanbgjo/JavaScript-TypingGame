@@ -50,7 +50,7 @@ button {
   cursor: pointer;
 }
 .bg {
-	background-color: #04AF71;
+	background-color: white;
 }
 .scoreContainer p, .scoreContainer span, .timeContainer p, .timeContainer span {
     font-size: 30px;
