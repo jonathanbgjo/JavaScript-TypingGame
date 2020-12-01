@@ -7,11 +7,12 @@ var points = 0;
 var spans;
 var typed;
 var seconds = 60;
+let bank = document.querySelector(".wordBank")
 console.log(button)
 
-function countdown() {
+function timer() {
     points = 0;
-    var timer = setInterval(function () {
+    var clock = setInterval(function () {
         button.disabled = true;
         seconds--;
         temp.innerHTML = seconds;
@@ -20,7 +21,7 @@ function countdown() {
             scoreDiv.innerHTML = "0";
             words.innerHTML = "";
             button.disabled = false;
-            clearInterval(timer);
+            clearInterval(clock);
             seconds = 60;
             timerDiv.innerHTML = "60";
             button.disabled = false;
@@ -29,27 +30,43 @@ function countdown() {
 }
 
 function random() {
+    
+    //reset
     words.innerHTML = "";
-    var random = Math.floor(Math.random() * (list.length));
-    var wordArray = list[random].split("");
+    //get word from wordbank
+    let random = wordsBank.shift();
+    getWord();
+
+    bank.innerHTML = "";
+    for (let i = 4; i >=0; i--) {
+        var word = document.createElement("p")
+        word.classList.add("wordBankWord")
+        word.innerHTML = wordsBank[i]
+        bank.appendChild(word)
+    }
+    //put another word into wordsbank
+    //split word into array to add span class and push each to "words" on html
+    var wordArray = random.split("");
+    console.log(wordArray)
     for (var i = 0; i < wordArray.length; i++) { //building the words with spans around the letters
         var span = document.createElement("span");
         span.classList.add("span");
         span.innerHTML = wordArray[i];
         words.appendChild(span);
     }
+
     spans = document.querySelectorAll(".span");
 }
 
 
 button.addEventListener("click", function (e) {
-    countdown();
+    timer();
     random();
     button.disabled = true;
 });
 
 
-function typing(e) {
+function checkWord(e) {
     typed = String.fromCharCode(e.which);
     // console.log(typed.toLowerCase())
     for (var i = 0; i < spans.length; i++) {
@@ -75,18 +92,18 @@ function typing(e) {
             // words.classList.add("fadeOut");
             points++; // increment the points
             scoreDiv.innerHTML = points; //add points to the points div
-            document.removeEventListener("keydown", typing, false);
+            document.removeEventListener("keydown", checkWord, false);
             setTimeout(function () {
                 words.className = "words"; // restart the classes
                 random(); // give another word
-                document.addEventListener("keydown", typing, false);
-            }, 400);
+                document.addEventListener("keydown", checkWord, false);
+            }, 0);
         }
 
     }
 }
 
-document.addEventListener("keydown", typing, false);
+document.addEventListener("keydown", checkWord, false);
 
 
 const list = [
@@ -107658,3 +107675,14 @@ const list = [
     "�tui",
     "�tuis"
 ]
+
+var wordsBank = []
+function initializeWordBank(){
+    for(let i =0;i<5;i++){
+        wordsBank.push(list[Math.floor(Math.random() * (list.length))])
+    }
+}
+initializeWordBank()
+function getWord(){
+    wordsBank.push(list[Math.floor(Math.random() * (list.length))])
+}

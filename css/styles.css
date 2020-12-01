@@ -6,55 +6,74 @@
 }
 
 body {
-	background-color: #cab5b5;
+	background-color: #073b4c;
     font-family: 'Times-Roman', sans-serif;
 }
 p{font-size:24px;}
-
+.title{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5vw;
+}
 .gameContainer {
-	max-width: 50%;
+    max-width: 75vw;
+    min-height: 500px;
 	margin: 0 auto;
 	width: 100%;
 	text-align: center;
-	padding: 2%;
-	background-color: #e6d0d0;
-	height: 35%;
+	padding: 5vw;
+	background-color: #118ab2;
+    height: 25vw;
+    margin-top:5vw;
 }
 
 h1 {
-    color: #18c6f1;
+    color: #06d6a0;
 }
 
 h1 + p {
-	margin-bottom: 5%;
-    color: #18c6f1;
+	/* margin-bottom: 5%; */
+    color: #06d6a0;
 }
+.description{
+    margin-bottom: 10px;
+    /* margin-top:-50px */
+    /* padding-top:-20px; */
+}
+.scoreContainer {
+    display:flex;
+    flex-direction: column;
+    float: left;
+}
+.timeContainer {
+    display:flex;
+    flex-direction: column;
 
-.scoreContainer {float: left;}
-.timeContainer {float: right;}
+    float: right;
+}
 
 
 button {
   border-style: none;
-  background-color: #18c6f1;
-  box-shadow: 0px 5px 0px 0px #18c6f1;
+  background-color: #06d6a0;
+  box-shadow: 0px 5px 0px 0px #06d6a0;
   outline: none;
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 22px;
   text-decoration: none;
   margin: 20px;
-  color: #fff;
+  color: #073b4c;
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 .bg {
-	background-color: white;
+	background-color: #06d6a0;
 }
 .scoreContainer p, .scoreContainer span, .timeContainer p, .timeContainer span {
     font-size: 30px;
-    color: #18c6f1;
+    color: #073b4c;
 }
 
 .wordsContainer {
@@ -62,15 +81,27 @@ button {
 }
 
 .words span{
+    text-align: center;
     font-size: 60px;
     letter-spacing: 1px;
-    color: black;
+    color: #ef476f;
+    height:50%
 }
-
-
-
-
-
-
+.wordBank{
+    /* float: left; */
+    position: absolute;
+    color: #06d6a0;
+}
+.wordBankContainer{
+    float:left;
+    position: absolute;
+    color: #073b4c
+}
+.wordBankWord{
+    /* float:left; */
+    text-align: left;
+    display:flex;
+    flex-direction: column;
+}
 
 
