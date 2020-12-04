@@ -34,8 +34,8 @@ function random() {
     words.innerHTML = "";
     //get word from wordbank
     let random = wordsBank.shift();
-    getWord();
-
+    // getWord();
+    wordsBank.push(list[Math.floor(Math.random() * (list.length))])
     bank.innerHTML = "";
     for (let i = 4; i >=0; i--) {
         var word = document.createElement("p")
