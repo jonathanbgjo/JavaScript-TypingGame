@@ -9,7 +9,7 @@ SpeedTyper is a game where you type as many words as you can within the time rem
   * CSS
 
 * Game Index
-![Index_Image](https://github.com/jonathanbgjo/TyperDino/assets/images/typerINDEX.PNG)
+![Index_Image](https://github.com/jonathanbgjo/JavaScript-TypingGame/blob/master/assets/images/typerINDEX.PNG)
 
 
 * Future Implementations
