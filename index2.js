@@ -30,7 +30,6 @@ function timer() {
 }
 
 function random() {
-    
     //reset
     words.innerHTML = "";
     //get word from wordbank
@@ -41,6 +40,7 @@ function random() {
     for (let i = 4; i >=0; i--) {
         var word = document.createElement("p")
         word.classList.add("wordBankWord")
+        word.fontsize(5-i)
         word.innerHTML = wordsBank[i]
         bank.appendChild(word)
     }

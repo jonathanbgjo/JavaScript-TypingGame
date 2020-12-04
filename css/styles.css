@@ -32,13 +32,10 @@ h1 {
 }
 
 h1 + p {
-	/* margin-bottom: 5%; */
     color: #06d6a0;
 }
 .description{
     margin-bottom: 10px;
-    /* margin-top:-50px */
-    /* padding-top:-20px; */
 }
 .scoreContainer {
     display:flex;
@@ -88,7 +85,6 @@ button {
     height:50%
 }
 .wordBank{
-    /* float: left; */
     position: absolute;
     color: #06d6a0;
 }
@@ -98,7 +94,6 @@ button {
     color: #073b4c
 }
 .wordBankWord{
-    /* float:left; */
     text-align: left;
     display:flex;
     flex-direction: column;
