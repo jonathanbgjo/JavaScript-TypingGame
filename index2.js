@@ -11,11 +11,13 @@ let bank = document.querySelector(".wordBank")
 console.log(button)
 
 function timer() {
+    
     points = 0;
     var clock = setInterval(function () {
         button.disabled = true;
         seconds--;
         temp.innerHTML = seconds;
+        //check if time over
         if (seconds === 0) {
             alert("Game over! Your score is " + points);
             scoreDiv.innerHTML = "0";
@@ -40,6 +42,7 @@ function random() {
     for (let i = 4; i >=0; i--) {
         var word = document.createElement("p")
         word.classList.add("wordBankWord")
+        //differentiate between which words will be coming up (by size)
         word.fontsize(5-i)
         word.innerHTML = wordsBank[i]
         bank.appendChild(word)
